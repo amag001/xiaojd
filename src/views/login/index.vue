@@ -134,6 +134,7 @@ export default {
   },
   created() {
     // window.addEventListener('storage', this.afterQRScan)
+    console.log(this.$route)
   },
   mounted() {
     if (this.loginForm.username === '') {

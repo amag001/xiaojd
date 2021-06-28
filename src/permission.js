@@ -7,7 +7,7 @@ import { getToken } from '@/utils/auth' // get token from cookie
 import getPageTitle from '@/utils/get-page-title'
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
-// 路由白名单 不需要token也能进入
+// 路由白名单 不需要token也能进入的页面
 const whiteList = ['/login', '/auth-redirect'] // no redirect whitelist
 
 router.beforeEach(async(to, from, next) => {
@@ -27,17 +27,19 @@ router.beforeEach(async(to, from, next) => {
       next({ path: '/' })
       NProgress.done() // hack: https://github.com/PanJiaChen/vue-element-admin/pull/2939
     } else {
+      console.log("有token")
       // determine whether the user has obtained his permission roles through getInfo
       const hasRoles = store.getters.roles && store.getters.roles.length > 0
       if (hasRoles) {
         next()
       } else {
+       
         try {
           // get user info
           // note: roles must be a object array! such as: ['admin'] or ,['developer','editor']
-          // 获取用户和权限信息，存到vuex里面
+          // 获取用户和权限信息，存到vuex里面，roles必须是一个数组
           const { roles } = await store.dispatch('user/getInfo')
-
+          console.log(roles)
           // generate accessible routes map based on roles
           // 生成路由数据，是一个数组
           const accessRoutes = await store.dispatch('permission/generateRoutes', roles)

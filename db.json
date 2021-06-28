@@ -1,0 +1,214 @@
+{
+  "pdf": {
+		"code":"200",
+		"data":{
+			"roles": ["admin"],
+			"introduction": "我是超级管理员",
+			"avatar": "https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif",
+			"name": "Super Admin"
+		},
+		"msg":"一切正常"
+	},
+  "knowledgeList": [
+    {
+      "title": "计算公式及临床检验",
+      "childList": [
+        {
+          "name": "常规计算公式"
+        },
+        {
+          "name": "临床校验"
+        }
+      ]
+    },
+    {
+      "title": "药品知识",
+      "childList": [
+        {
+          "name": "适应症"
+        },
+        {
+          "name": "FDA药品说明书"
+        },
+        {
+          "name": "药品评价"
+        },
+        {
+          "name": "药品标准数据"
+        },
+        {
+          "name": "超说明书适应症"
+        },
+        {
+          "name": "CFDA说明书修订公告"
+        },
+        {
+          "name": "不良反应信息通报"
+        },
+        {
+          "name": "药物警戒快讯"
+        },
+        {
+          "name": "药物相互作用"
+        },
+        {
+          "name": "抗生素慎用症查询"
+        },
+        {
+          "name": "兴奋剂禁用目录"
+        },
+        {
+          "name": "药物专家共识"
+        },
+        {
+          "name": "药物剂型和给药系统"
+        },
+        {
+          "name": "抗微生物用药治疗书籍指南"
+        },
+        {
+          "name": "中华人民共和国药典"
+        }
+      ]
+    },
+    {
+      "title": "临床用药依据",
+      "childList": [
+        {
+          "name": "中医临床路径"
+        },
+        {
+          "name": "西药/中成药"
+        },
+        {
+          "name": "中药"
+        },
+        {
+          "name": "FDA妊娠期用药分类"
+        },
+        {
+          "name": "名医名方"
+        },
+        {
+          "name": "诊疗方案"
+        },
+        {
+          "name": "西医临床路径"
+        },
+        {
+          "name": "疾病用药处方分析集"
+        },
+        {
+          "name": "临床用药书籍指南"
+        },
+        {
+          "name": "中医药学"
+        }
+      ]
+    },
+    {
+      "title": "审方依据",
+      "childList": [
+        {
+          "name": "国家处方审核依据"
+        },
+        {
+          "name": "广东省处方审核依据"
+        }
+      ]
+    }
+  ],
+ "login":
+	{
+		"code":"200",
+		"data":{
+			"token":"amag0001",
+			"roles": ["admin"],
+			"introduction": "我是超级管理员",
+			"avatar": "https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif",
+			"name": "Super Admin"
+		},
+		"msg":"一切正常"
+	},
+ "asyncRouter":
+	{
+		"code":"200",
+		"data":[{
+			"path":"/admin",
+			"component":"Layout",
+			"alwaysShow":true,
+			"name":"Admin",
+			"meta":{
+					"title":"Admin",
+					"icon":"lock",
+					"roles":["user"],
+					"noCache":true
+				},
+			"children":[
+			{
+				"path":"index",
+				"component":"admin/index",
+				"alwaysShow":false,
+				"name":"adminIndex",
+				"meta":{
+					"title":"我的",
+					"icon":"lock",
+					"roles":["user"],
+					"noCache":true
+				}
+			},
+			{
+				"path":"role",
+				"component":"admin/role",
+				"alwaysShow":false,
+				"name":"adminRole",
+				"meta":{
+					"title":"权限管理",
+					"icon":"lock",
+					"roles":["admin"],
+					"noCache":true
+				}
+			}
+			]
+		},
+		{
+			"path":"/demo",
+			"component":"Layout", 
+			"alwaysShow":true,
+			"name":"Demo",
+			"meta":{
+					"title":"Demo",
+					"icon":"lock",
+					"roles":["admin"],
+					"noCache":true
+				},
+			"children":[
+			{
+				"path":"index",
+				"component":"demo/index",
+				"alwaysShow":false,
+				"name":"demoIndex",
+				"meta":{
+					"title":"测试",
+					"icon":"lock",
+					"roles":["admin"],
+					"noCache":true
+				}
+			},
+			{
+				"path":"role",
+				"component":"demo/role",
+				"alwaysShow":false,
+				"name":"demoRole",
+				"meta":{
+					"title":"测试权限管理",
+					"icon":"lock",
+					"roles":["admin"],
+					"noCache":true
+				}
+			}
+			]
+		}
+		]
+	}
+}
